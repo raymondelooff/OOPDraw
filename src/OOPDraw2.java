@@ -23,6 +23,15 @@
  * if your system crashes because of this code, or if anything else 
  * bad happens. In short "DO WHAT YOU WANT BUT DONT BLAME ME !" 
  *****************************************************************/
+import composer.LineComposer;
+import composer.OvalComposer;
+import composer.RectangleComposer;
+import composer.ShapeComposer;
+import shape.Shape;
+import shape.Line;
+import shape.Oval;
+import shape.Rectangle;
+
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -34,7 +43,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.ArrayList;
+import java.util.HashSet;
 
 import javax.swing.JFrame;
 
@@ -75,31 +84,18 @@ import javax.swing.JFrame;
 public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListener {
 
 	private static final long serialVersionUID = 4695753453561082104L;
-	
 	private static OOPDraw2 _instance;
-
-	private Point startpos, endpos; // Declare the start and end positions
-
-	//ArrayList for storing the shapes
-	private ArrayList<Object> vt = new ArrayList<Object>();
-
-	private int nheight1, nwidth1;
-
-	private boolean bline = false; // booleans to know which button was pressed
-
-	private boolean boval = false; // hit/which shapes is to be drawn
-
-	boolean brect = false;
-
-	public static void main(String[] args) {
-		OOPDraw2 frame = getInstance();
-		frame.setVisible(true);
-	}
+	private ShapeComposer currentComposer;
+	private HashSet<Shape> shapes;
 
 	/**
 	 * Private constructor, because OOPDraw2 must be singleton
 	 */
 	private OOPDraw2() {
+		// Initialize fields
+		shapes = new HashSet<Shape>();
+		currentComposer = new LineComposer();
+
 		// Do nothing in constructor off applet
 		initGUI();
 	}
@@ -117,72 +113,43 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		// Nothing TO DO in this method
+	public void mousePressed(MouseEvent event) {
+		// Where the mouse went down is the start position of the shape to be drawn
+		int x = event.getX();
+		int y = event.getY();
+		Point startPosition = new Point(x, y);
+
+		// Call create method
+		currentComposer.create(startPosition);
+
+		// Add shape to shapes set
+		shapes.add(currentComposer.getShape());
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// Nothing TO DO in this method
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// Nothing TO DO in this method
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// Where the mouse went down is the start
-		// position of the shape to be drawn
-		int x = arg0.getX();
-		int y = arg0.getY();
-		startpos = new Point(x, y);
-		if (bline) {
-			s = new MyLine(); // Create the shape - Line
-			s.setStart(startpos);// Set the start position where mouse went down
-			vt.add(s); // and add the shape (line) to the vector vt
-		}
-		if (boval) {
-			o = new MyOval(); // Create the shape - Oval
-			o.setStart(startpos);// Set the start position where mouse went down
-			vt.add(o); // and add the shape (oval) to the vector vt
-
-		}
-		if (brect) {
-			r = new MyRect(); // Create the shape - Rectangle
-			r.setStart(startpos);// Set the start position where mouse went down
-			vt.add(r); // and add the shape (Rectangle) to the vector vt
-		}
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// Fianlly the mouse is up indicating shape drawing is over.
+	public void mouseReleased(MouseEvent event) {
+		// Finally the mouse is up indicating shape drawing is over.
 		// So set these mouseUp coordinates to set the end position.
-		// Then update the Vector count.
-		int x = arg0.getX();
-		int y = arg0.getY();
-		endpos = new Point(x, y);
-		if (bline) {
-			s = (MyLine) vt.get(i);
-			s.setEnd(endpos);
-			i++;
-			// increment the index of Vector as
-			// cLine object is now added at current index i
-		}
-		if (boval) {
+		int x = event.getX();
+		int y = event.getY();
+		Point endPosition = new Point(x, y);
+
+		// Call complete method
+		currentComposer.complete(endPosition);
+
+
+		/*if (boval) {
 			// All this jugglery because we do not want to draw oval
 			// outside the applet area. Also we should be able to draw
 			// the oval even if our starting point is at bottom right
 			// and end point is at top left of the applet. Note that
 			// top-left to top right is the positive x axis and top left
 			// to left bottom is the positive y axis.
-			Point drawto = new Point(Math.max(x, startpos.x), Math.max(y, startpos.y));
-			Point newstart = new Point(Math.min(x, startpos.x), Math.min(y, startpos.y));
+			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
+			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
 			nwidth1 = Math.abs((drawto.x - newstart.x));
 			nheight1 = Math.abs((drawto.y - newstart.y));
-			o = (MyOval) vt.get(i);
+			o = (Oval) vt.get(i);
 			o.setWidth(nwidth1);
 			o.setHeight(nheight1);
 			o.setStart(newstart);
@@ -191,18 +158,19 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 			// cOval object is now added at current index i
 		}
 		if (brect) {
-			Point drawto = new Point(Math.max(x, startpos.x), Math.max(y, startpos.y));
-			Point newstart = new Point(Math.min(x, startpos.x), Math.min(y, startpos.y));
+			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
+			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
 			nwidth1 = Math.abs((drawto.x - newstart.x));
 			nheight1 = Math.abs((drawto.y - newstart.y));
-			r = (MyRect) vt.get(i);
+			r = (Rect) vt.get(i);
 			r.setWidth(nwidth1);
 			r.setHeight(nheight1);
 			r.setStart(newstart);
 			i++;
 			// increment the index of Vector as
 			// cRect object is now added at current index i
-		}
+		}*/
+
 		repaint();
 	}
 
@@ -214,52 +182,69 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	 * )
 	 */
 	@Override
-	public void mouseDragged(MouseEvent arg0) {
+	public void mouseDragged(MouseEvent event) {
 		// Now the mouse is being dragged without releasing,
 		// which means that the user may stop his mouse over a
 		// point but not release it. So that point is the
 		// current endpoint
-		int x = arg0.getX();
-		int y = arg0.getY();
-		endpos = new Point(x, y);
-		if (bline) {
-			s = (MyLine) vt.get(i); // refer to that shape stored in vector
-			s.setEnd(endpos); // and set its end point.
-		}
-		if (boval) {
+		int x = event.getX();
+		int y = event.getY();
+		Point position = new Point(x, y);
+
+		// Call dragged method
+		currentComposer.expand(position);
+
+
+		/*if (boval) {
 			// Here we see where the shape drawing started (mouse went down) and
 			// now where the mouse is (mouse drag). And we draw from this new
 			// point to the point from which the mouse went down. This avoids
-			// the Oval/Rectangle from going out of the screen, or some really
+			// the shape.Oval/Rectangle from going out of the screen, or some really
 			// weird things from happening.
-			// Try to take simple Line drawing type of approach and draw from
+			// Try to take simple shape.Line drawing type of approach and draw from
 			// bottom
 			// right to top left and see what happens :)
-			Point drawto = new Point(Math.max(x, startpos.x), Math.max(y, startpos.y));
-			Point newstart = new Point(Math.min(x, startpos.x), Math.min(y, startpos.y));
+			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
+			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
 			nwidth1 = Math.abs((drawto.x - newstart.x));
 			nheight1 = Math.abs((drawto.y - newstart.y));
-			o = (MyOval) vt.get(i);
+			o = (Oval) vt.get(i);
 			o.setWidth(nwidth1);
 			o.setHeight(nheight1);
 			o.setStart(newstart);
 		}
 		if (brect) {
-			Point drawto = new Point(Math.max(x, startpos.x), Math.max(y, startpos.y));
-			Point newstart = new Point(Math.min(x, startpos.x), Math.min(y, startpos.y));
+			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
+			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
 			nwidth1 = Math.abs((drawto.x - newstart.x));
 			nheight1 = Math.abs((drawto.y - newstart.y));
-			r = (MyRect) vt.get(i);
+			r = (Rect) vt.get(i);
 			r.setWidth(nwidth1);
 			r.setHeight(nheight1);
 			r.setStart(newstart);
-		}
+		}*/
+
 		repaint();
 	}
 
 	@Override
-	public void mouseMoved(MouseEvent arg0) {
-		// Nothing TO DO in this method
+	public void mouseMoved(MouseEvent event) {
+		// Method not used
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent event) {
+		// Method not used
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent event) {
+		// Method not used
+	}
+
+	@Override
+	public void mouseExited(MouseEvent event) {
+		// Method not used
 	}
 
 	/*
@@ -274,71 +259,80 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		g.fillRect(0, 0, getSize().width, getSize().height);
 		g.setColor(new Color(255, 255, 154));
 		g.fillRect(1, 1, getSize().width - 3, getSize().height - 3);
-		for (int i = 0; i < vt.size(); i++) {
-			// Add the shapes to the vector
-			AbstractShape sh = (AbstractShape) vt.get(i);
-			sh.Draw((Graphics2D) g);
+
+		for(Shape shape: shapes) {
+			shape.Draw((Graphics2D) g);
 		}
 	}
 
 	/*
-	 * method initializes GUI components
+	 * Initialize all GUI components
 	 */
 	private void initGUI() {
 		setSize(800, 600);
-		setTitle("POSE 2.0 hairy drawing tool");
+		setTitle("Draw");
 		setLayout(new FlowLayout());
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
-		// Create and Add the buttons
-		btnLine = new Button("Line");
+
+		// shape.Line
+		Button btnLine = new Button("Line");
 		btnLine.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				bline = true;
-				boval = false;
-				brect = false;
+				currentComposer = new LineComposer();
 			}
+
 		});
-		btnOval = new Button("Oval");
+
+		// shape.Oval
+		Button btnOval = new Button("Oval");
 		btnOval.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				bline = false;
-				boval = true;
-				brect = false;
+				currentComposer = new OvalComposer();
 			}
+
 		});
-		btnRect = new Button("Rectangle");
+
+		// Rectangle
+		Button btnRect = new Button("Rectangle");
 		btnRect.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				bline = false;
-				boval = false;
-				brect = true;
+				currentComposer = new RectangleComposer();
 			}
+
 		});
-		btnClear = new Button("Clear");
+
+		// Clear view
+		Button btnClear = new Button("Clear");
 		btnClear.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// Clear the entire drawing screen
 				// First remove all elements
-				vt.clear();
-				// then make vector index zero
-				i = 0;
+				shapes.clear();
+
 				// finally, call repaint()
 				repaint();
 			}
+
 		});
+
 		add(btnLine);
 		add(btnOval);
 		add(btnRect);
 		add(btnClear);
 	}
 
-} // ALL ends :)
+	public static void main(String[] args) {
+		OOPDraw2 frame = getInstance();
+		frame.setVisible(true);
+	}
+
+}

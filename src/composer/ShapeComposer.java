@@ -1,4 +1,8 @@
+package composer;
+
 import java.awt.Point;
+
+import shape.Shape;
 
 /**
  * This interface describes a shape composer
@@ -11,5 +15,7 @@ public interface ShapeComposer {
 	public void expand(Point point);
 	
 	public void complete(Point point);
+
+	public Shape getShape();
 
 }
