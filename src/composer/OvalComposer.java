@@ -8,29 +8,14 @@ import java.awt.*;
 /**
  * @author Raymon de Looff
  */
-public class OvalComposer implements ShapeComposer {
-
-    private Oval oval;
+public class OvalComposer extends ShapeComposer {
 
     @Override
     public void create(Point point) {
-        oval = new Oval(Color.GREEN);
-        oval.setStartPosition(point);
-    }
+        super.create(point);
 
-    @Override
-    public void expand(Point point) {
-        oval.setEndPosition(point);
-    }
-
-    @Override
-    public void complete(Point point) {
-        oval.setEndPosition(point);
-    }
-
-    @Override
-    public Shape getShape() {
-        return oval;
+        shape = new Oval(Color.GREEN);
+        shape.setStartPosition(point);
     }
 
 }

@@ -17,7 +17,7 @@ public class Rectangle extends Shape {
 		super.Draw(graphics);
 
 		// Draw the rectangle
-		graphics.drawRect(startPosition.x, startPosition.y, getWidth(), getHeight());
+		graphics.drawRect(startPosition.x, startPosition.y, width, height);
 	}
 
 }

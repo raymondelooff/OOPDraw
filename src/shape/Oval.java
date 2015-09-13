@@ -16,11 +16,8 @@ public class Oval extends Shape {
 	public void Draw(Graphics2D graphics) {
 		super.Draw(graphics);
 
-		System.out.println("Width: " + getWidth());
-		System.out.println("Height" + getHeight());
-
 		// Draw the oval
-		graphics.drawOval(startPosition.x, startPosition.y, getWidth(), getHeight());
+		graphics.drawOval(startPosition.x, startPosition.y, width, height);
 	}
 
 }

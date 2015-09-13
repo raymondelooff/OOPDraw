@@ -8,29 +8,14 @@ import java.awt.*;
 /**
  * @author Raymon de Looff
  */
-public class RectangleComposer implements ShapeComposer {
-
-    private Rectangle rectangle;
+public class RectangleComposer extends ShapeComposer {
 
     @Override
     public void create(Point point) {
-        rectangle = new Rectangle(Color.ORANGE);
-        rectangle.setStartPosition(point);
-    }
+        super.create(point);
 
-    @Override
-    public void expand(Point point) {
-        rectangle.setEndPosition(point);
-    }
-
-    @Override
-    public void complete(Point point) {
-        rectangle.setEndPosition(point);
-    }
-
-    @Override
-    public Shape getShape() {
-        return rectangle;
+        shape = new Rectangle(Color.ORANGE);
+        shape.setStartPosition(point);
     }
 
 }

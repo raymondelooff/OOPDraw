@@ -11,6 +11,7 @@ import java.awt.Point;
 public abstract class Shape {
 
 	protected Point startPosition, endPosition;
+	protected int height, width;
 	protected Color shapeColor; // Default color
 
 	/**
@@ -45,6 +46,22 @@ public abstract class Shape {
 	}
 
 	/**
+	 * This method sets the new height of the shape
+	 * @param height The new height of the shape
+	 */
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	/**
+	 * This method sets the new width of the shape
+	 * @param width The new width of the shape
+	 */
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	/**
 	 * This method sets the color of the shape
 	 * @param color The new color of the shape
 	 */
@@ -73,7 +90,6 @@ public abstract class Shape {
 	 * @return The height of the shape object
 	 */
 	protected int getHeight() {
-		int height = endPosition.y - startPosition.y;
 		return height;
 	}
 
@@ -82,7 +98,6 @@ public abstract class Shape {
 	 * @return The width of the shape object
 	 */
 	protected int getWidth() {
-		int width = endPosition.x - startPosition.x;
 		return width;
 	}
 
