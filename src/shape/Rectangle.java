@@ -1,15 +1,24 @@
 package shape;
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 /**
  * This class describes a rectangle
  * @author Raymon de Looff
  */
-public class Rectangle extends Shape {
+public class Rectangle extends AbstractShape {
 
-	public Rectangle(Color color) {
-		super(color);
+	private Rectangle2D rectangle;
+
+	public Rectangle() {
+		rectangle = new Rectangle2D.Double();
+		color = Color.ORANGE;
+	}
+
+	@Override
+	public void updateShape() {
+		rectangle.setFrameFromDiagonal(startPoint, endPoint);
 	}
 
 	@Override
@@ -17,7 +26,7 @@ public class Rectangle extends Shape {
 		super.Draw(graphics);
 
 		// Draw the rectangle
-		graphics.drawRect(startPosition.x, startPosition.y, width, height);
+		graphics.draw(rectangle);
 	}
 
 }

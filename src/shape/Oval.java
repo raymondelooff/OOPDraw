@@ -1,23 +1,32 @@
 package shape;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
 /**
- *  This class describes an oval
- *  @author Raymon de Looff
+ * This class describes an oval
+ * @author Raymon de Looff
  */
-public class Oval extends Shape {
+public class Oval extends AbstractShape {
 
-	public Oval(Color color) {
-		super(color);
+	private Ellipse2D.Double ellipse;
+
+	public Oval() {
+		ellipse = new Ellipse2D.Double();
+		color = Color.RED;
+	}
+
+	@Override
+	public void updateShape() {
+		ellipse.setFrameFromDiagonal(startPoint, endPoint);
 	}
 
 	@Override
 	public void Draw(Graphics2D graphics) {
 		super.Draw(graphics);
 
-		// Draw the oval
-		graphics.drawOval(startPosition.x, startPosition.y, width, height);
+		// Draw the shape
+		graphics.draw(ellipse);
 	}
 
 }

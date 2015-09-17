@@ -1,7 +1,7 @@
 package composer;
 
+import shape.AbstractShape;
 import shape.Line;
-import shape.Shape;
 
 import java.awt.*;
 
@@ -12,16 +12,22 @@ import java.awt.*;
 public class LineComposer extends ShapeComposer {
 
 	@Override
-	public void create(Point point) {
-		super.create(point);
+	public AbstractShape create(Point point) {
+		shape = new Line();
+		shape.setStartPoint(point);
 
-		shape = new Line(Color.BLUE);
-		shape.setStartPosition(point);
+		return shape;
 	}
 
 	@Override
-	public void expand(Point point) {
-		shape.setEndPosition(point);
+	public AbstractShape expand(Point point) {
+		shape.setEndPoint(point);
+
+		return shape;
 	}
 
+	@Override
+	public AbstractShape complete(Point point) {
+		return expand(point);
+	}
 }

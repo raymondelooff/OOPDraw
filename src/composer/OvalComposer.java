@@ -1,7 +1,7 @@
 package composer;
 
+import shape.AbstractShape;
 import shape.Oval;
-import shape.Shape;
 
 import java.awt.*;
 
@@ -11,11 +11,22 @@ import java.awt.*;
 public class OvalComposer extends ShapeComposer {
 
     @Override
-    public void create(Point point) {
-        super.create(point);
+    public AbstractShape create(Point point) {
+        shape = new Oval();
+        shape.setStartPoint(point);
 
-        shape = new Oval(Color.GREEN);
-        shape.setStartPosition(point);
+        return shape;
     }
 
+    @Override
+    public AbstractShape expand(Point point) {
+        shape.setEndPoint(point);
+
+        return shape;
+    }
+
+    @Override
+    public AbstractShape complete(Point point) {
+        return expand(point);
+    }
 }

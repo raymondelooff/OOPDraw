@@ -27,10 +27,7 @@ import composer.LineComposer;
 import composer.OvalComposer;
 import composer.RectangleComposer;
 import composer.ShapeComposer;
-import shape.Shape;
-import shape.Line;
-import shape.Oval;
-import shape.Rectangle;
+import shape.AbstractShape;
 
 import java.awt.Button;
 import java.awt.Color;
@@ -56,7 +53,7 @@ import javax.swing.JFrame;
  * <p/>
  *******************************************************************************<p/>
  * Description: A very simple vector drawing example. I have used the OO concept
- * of Polymorphism to declare on abstract Shape class and then derived line,
+ * of Polymorphism to declare on abstract AbstractShape class and then derived line,
  * rectangle and oval shape classes. The shapes are stored in a Vector so that
  * they remain on screen as new shapes are drawn. An offscreen image technique
  * is used to avoid flicker.
@@ -86,14 +83,14 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	private static final long serialVersionUID = 4695753453561082104L;
 	private static OOPDraw2 _instance;
 	private ShapeComposer currentComposer;
-	private HashSet<Shape> shapes;
+	private HashSet<AbstractShape> shapes;
 
 	/**
 	 * Private constructor, because OOPDraw2 must be singleton
 	 */
 	private OOPDraw2() {
 		// Initialize fields
-		shapes = new HashSet<Shape>();
+		shapes = new HashSet<AbstractShape>();
 		currentComposer = new LineComposer();
 
 		// Do nothing in constructor off applet
@@ -120,10 +117,10 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		Point startPosition = new Point(x, y);
 
 		// Call create method
-		currentComposer.create(startPosition);
+		AbstractShape shape = currentComposer.create(startPosition);
 
 		// Add shape to shapes set
-		shapes.add(currentComposer.getShape());
+		shapes.add(shape);
 	}
 
 	@Override
@@ -136,40 +133,6 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 		// Call complete method
 		currentComposer.complete(endPosition);
-
-
-		/*if (boval) {
-			// All this jugglery because we do not want to draw oval
-			// outside the applet area. Also we should be able to draw
-			// the oval even if our starting point is at bottom right
-			// and end point is at top left of the applet. Note that
-			// top-left to top right is the positive x axis and top left
-			// to left bottom is the positive y axis.
-			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
-			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
-			nwidth1 = Math.abs((drawto.x - newstart.x));
-			nheight1 = Math.abs((drawto.y - newstart.y));
-			o = (Oval) vt.get(i);
-			o.setWidth(nwidth1);
-			o.setHeight(nheight1);
-			o.setStart(newstart);
-			i++;
-			// increment the index of Vector as
-			// cOval object is now added at current index i
-		}
-		if (brect) {
-			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
-			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
-			nwidth1 = Math.abs((drawto.x - newstart.x));
-			nheight1 = Math.abs((drawto.y - newstart.y));
-			r = (Rect) vt.get(i);
-			r.setWidth(nwidth1);
-			r.setHeight(nheight1);
-			r.setStart(newstart);
-			i++;
-			// increment the index of Vector as
-			// cRect object is now added at current index i
-		}*/
 
 		repaint();
 	}
@@ -193,36 +156,6 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 		// Call dragged method
 		currentComposer.expand(position);
-
-
-		/*if (boval) {
-			// Here we see where the shape drawing started (mouse went down) and
-			// now where the mouse is (mouse drag). And we draw from this new
-			// point to the point from which the mouse went down. This avoids
-			// the shape.Oval/Rectangle from going out of the screen, or some really
-			// weird things from happening.
-			// Try to take simple shape.Line drawing type of approach and draw from
-			// bottom
-			// right to top left and see what happens :)
-			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
-			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
-			nwidth1 = Math.abs((drawto.x - newstart.x));
-			nheight1 = Math.abs((drawto.y - newstart.y));
-			o = (Oval) vt.get(i);
-			o.setWidth(nwidth1);
-			o.setHeight(nheight1);
-			o.setStart(newstart);
-		}
-		if (brect) {
-			Point drawto = new Point(Math.max(x, startPosition.x), Math.max(y, startPosition.y));
-			Point newstart = new Point(Math.min(x, startPosition.x), Math.min(y, startPosition.y));
-			nwidth1 = Math.abs((drawto.x - newstart.x));
-			nheight1 = Math.abs((drawto.y - newstart.y));
-			r = (Rect) vt.get(i);
-			r.setWidth(nwidth1);
-			r.setHeight(nheight1);
-			r.setStart(newstart);
-		}*/
 
 		repaint();
 	}
@@ -260,7 +193,7 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		g.setColor(new Color(255, 255, 154));
 		g.fillRect(1, 1, getSize().width - 3, getSize().height - 3);
 
-		for(Shape shape: shapes) {
+		for(AbstractShape shape: shapes) {
 			shape.Draw((Graphics2D) g);
 		}
 	}

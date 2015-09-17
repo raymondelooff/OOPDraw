@@ -1,7 +1,7 @@
 package composer;
 
+import shape.AbstractShape;
 import shape.Rectangle;
-import shape.Shape;
 
 import java.awt.*;
 
@@ -11,11 +11,25 @@ import java.awt.*;
 public class RectangleComposer extends ShapeComposer {
 
     @Override
-    public void create(Point point) {
-        super.create(point);
+    public AbstractShape create(Point point) {
+        shape = new Rectangle();
+        shape.setStartPoint(point);
 
-        shape = new Rectangle(Color.ORANGE);
-        shape.setStartPosition(point);
+        return shape;
+    }
+
+    @Override
+    public AbstractShape expand(Point point) {
+        shape.setEndPoint(point);
+
+        return shape;
+    }
+
+    @Override
+    public AbstractShape complete(Point point) {
+        expand(point);
+
+        return shape;
     }
 
 }
