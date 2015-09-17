@@ -6,6 +6,7 @@ import shape.Rectangle;
 import java.awt.*;
 
 /**
+ * This class describes a rectangle composer
  * @author Raymon de Looff
  */
 public class RectangleComposer extends ShapeComposer {
@@ -19,17 +20,13 @@ public class RectangleComposer extends ShapeComposer {
     }
 
     @Override
-    public AbstractShape expand(Point point) {
+    public void expand(Point point) {
         shape.setEndPoint(point);
-
-        return shape;
     }
 
     @Override
-    public AbstractShape complete(Point point) {
+    public void complete(Point point) {
         expand(point);
-
-        return shape;
     }
 
 }

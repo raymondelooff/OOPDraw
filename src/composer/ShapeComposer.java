@@ -14,8 +14,8 @@ public abstract class ShapeComposer {
 	
 	public abstract AbstractShape create(Point point);
 	
-	public abstract AbstractShape expand(Point point);
+	public abstract void expand(Point point);
 	
-	public abstract AbstractShape complete(Point point);
+	public abstract void complete(Point point);
 
 }
