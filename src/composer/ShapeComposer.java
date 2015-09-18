@@ -14,8 +14,12 @@ public abstract class ShapeComposer {
 	
 	public abstract AbstractShape create(Point point);
 	
-	public abstract void expand(Point point);
+	public void expand(Point point) {
+		shape.setEndPoint(point);
+	}
 	
-	public abstract void complete(Point point);
+	public void complete(Point point) {
+		expand(point);
+	}
 
 }

@@ -19,14 +19,4 @@ public class RectangleComposer extends ShapeComposer {
         return shape;
     }
 
-    @Override
-    public void expand(Point point) {
-        shape.setEndPoint(point);
-    }
-
-    @Override
-    public void complete(Point point) {
-        expand(point);
-    }
-
 }
