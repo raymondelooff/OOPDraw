@@ -9,7 +9,7 @@ import java.awt.geom.Rectangle2D;
  */
 public class Rectangle extends AbstractShape {
 
-	private Rectangle2D rectangle;
+	private Rectangle2D.Double rectangle;
 
 	public Rectangle() {
 		rectangle = new Rectangle2D.Double();
