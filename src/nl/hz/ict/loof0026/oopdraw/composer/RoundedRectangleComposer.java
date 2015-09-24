@@ -18,4 +18,5 @@ public class RoundedRectangleComposer extends ShapeComposer {
 
         return shape;
     }
+
 }

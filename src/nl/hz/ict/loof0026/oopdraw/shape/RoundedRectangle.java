@@ -10,6 +10,7 @@ import java.awt.geom.RoundRectangle2D;
 public class RoundedRectangle extends AbstractShape {
 
     private RoundRectangle2D.Double roundRectangle;
+    private static final Double cornerRadius = 0.5;
 
     public RoundedRectangle() {
         roundRectangle = new RoundRectangle2D.Double();
@@ -19,6 +20,10 @@ public class RoundedRectangle extends AbstractShape {
     @Override
     public void updateShape() {
         roundRectangle.setFrameFromDiagonal(startPoint, endPoint);
+
+        // Set the arc for the rounded borders
+        roundRectangle.arcwidth = roundRectangle.getWidth() * cornerRadius;
+        roundRectangle.archeight = roundRectangle.getHeight() * cornerRadius;
     }
 
     @Override
