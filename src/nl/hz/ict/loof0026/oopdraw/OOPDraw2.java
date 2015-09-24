@@ -79,31 +79,18 @@ import javax.swing.JFrame;
 public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListener {
 
 	private static final long serialVersionUID = 4695753453561082104L;
-	private static OOPDraw2 _instance;
 	private ShapeComposer currentComposer;
 	private HashSet<AbstractShape> shapes;
 
 	/**
 	 * Private constructor, because OOPDraw2 must be singleton
 	 */
-	private OOPDraw2() {
+	public OOPDraw2() {
 		// Initialize fields
 		shapes = new HashSet<AbstractShape>();
 
 		// Initialize the GUI
 		initGUI();
-	}
-	
-	/**
-	 * This method returns the singleton instance
-	 * @return
-	 */
-	public static OOPDraw2 getInstance() {
-		if(_instance == null) {
-			_instance = new OOPDraw2();
-		}
-		
-		return _instance;
 	}
 
 	@Override
@@ -265,7 +252,7 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	}
 
 	public static void main(String[] args) {
-		OOPDraw2 frame = getInstance();
+		OOPDraw2 frame = new OOPDraw2();
 		frame.setVisible(true);
 	}
 
