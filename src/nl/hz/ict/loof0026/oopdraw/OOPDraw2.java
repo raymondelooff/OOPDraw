@@ -91,7 +91,13 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		// Initialize fields
 		shapes = new HashSet<AbstractShape>();
 		composerFactory = new ComposerFactory();
-		currentComposer = new LineComposer();
+
+		try {
+			currentComposer = composerFactory.getComposer("line");
+		}
+		catch (UnknownShapeException e) {
+			e.printStackTrace();
+		}
 
 		// Do nothing in constructor off applet
 		initGUI();

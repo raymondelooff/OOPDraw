@@ -26,11 +26,122 @@
       <file leaf-file-name="OOPDraw2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/OOPDraw2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74733096">
-              <caret line="255" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6448598">
+              <caret line="98" column="32" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="diagram.uml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/diagram.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="184.25000000000003" y="178.0">nl.hz.ict.loof0026.oopdraw.composer.OvalComposer</node>
+                <node x="328.25" y="178.0">nl.hz.ict.loof0026.oopdraw.composer.LineComposer</node>
+                <node x="299.3883928571429" y="89.0">nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer</node>
+                <node x="405.25993303571425" y="356.0">nl.hz.ict.loof0026.oopdraw.OOPDraw2</node>
+                <node x="470.25" y="178.0">nl.hz.ict.loof0026.oopdraw.exception.UnknownShapeException</node>
+                <node x="261.35033482142865" y="0.0">nl.hz.ict.loof0026.oopdraw.shape.AbstractShape</node>
+                <node x="452.3883928571429" y="89.0">nl.hz.ict.loof0026.oopdraw.shape.Line</node>
+                <node x="166.3125" y="89.0">nl.hz.ict.loof0026.oopdraw.shape.Oval</node>
+                <node x="0.0" y="89.0">nl.hz.ict.loof0026.oopdraw.shape.Rectangle</node>
+                <node x="169.25993303571425" y="277.0">nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory</node>
+                <node x="7.25" y="178.0">nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.LineComposer" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
+                  <point x="-30.5" y="-14.5" />
+                  <point x="358.75" y="158.0" />
+                  <point x="382.5133928571429" y="158.0" />
+                  <point x="16.625" y="14.5" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.LineComposer" target="nl.hz.ict.loof0026.oopdraw.shape.Line">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.composer.LineComposer">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
+                  <point x="39.25" y="-14.5" />
+                  <point x="125.0" y="148.0" />
+                  <point x="316.0133928571429" y="148.0" />
+                  <point x="-49.875" y="14.5" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer" target="nl.hz.ict.loof0026.oopdraw.shape.Rectangle">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.OvalComposer" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
+                  <point x="30.99999999999997" y="-14.5" />
+                  <point x="277.25" y="158.0" />
+                  <point x="349.2633928571429" y="158.0" />
+                  <point x="-16.625" y="14.5" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.shape.Rectangle" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
+                  <point x="0.0" y="-14.5" />
+                  <point x="46.5" y="59.0" />
+                  <point x="273.5503348214286" y="59.0" />
+                  <point x="-48.80000000000001" y="14.5" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.OOPDraw2" target="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.composer.OvalComposer">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.shape.Line" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
+                  <point x="0.0" y="-14.5" />
+                  <point x="481.3883928571429" y="59.0" />
+                  <point x="346.7503348214286" y="59.0" />
+                  <point x="24.399999999999977" y="14.5" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.shape.Oval" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
+                  <point x="0.0" y="-14.5" />
+                  <point x="196.3125" y="69.0" />
+                  <point x="297.95033482142867" y="69.0" />
+                  <point x="-24.399999999999977" y="14.5" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.OOPDraw2" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.OOPDraw2" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.OvalComposer" target="nl.hz.ict.loof0026.oopdraw.shape.Oval">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.exception.UnknownShapeException">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-2.0" y="165.0" />
+              <SelectedNodes />
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -39,7 +150,7 @@
         <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/ComposerFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="84" selection-start-line="39" selection-start-column="84" selection-end-line="39" selection-end-column="84" />
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -618,12 +729,12 @@
       <workItem from="1442478103340" duration="9926000" />
       <workItem from="1442569119603" duration="911000" />
       <workItem from="1443083498192" duration="2255000" />
-      <workItem from="1443085938696" duration="247000" />
+      <workItem from="1443085938696" duration="1387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36648000" />
+    <option name="totallyTimeSpent" value="37788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="6" />
@@ -682,16 +793,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/OvalComposer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/LineComposer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1137,24 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/ComposerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="84" selection-start-line="39" selection-start-column="84" selection-end-line="39" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/OOPDraw2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74733096">
-          <caret line="255" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/exception">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1173,114 +1256,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/ComposerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/nl.hz.ict.loof0026.oopdraw">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>nl.hz.ict.loof0026.oopdraw</OriginalElement>
+          <nodes>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.composer.OvalComposer</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.composer.LineComposer</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.shape.Oval</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.shape.Rectangle</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.OOPDraw2</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.exception.UnknownShapeException</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.shape.AbstractShape</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer</node>
+            <node x="" y="">nl.hz.ict.loof0026.oopdraw.shape.Line</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="134.0" y="168.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram.uml">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>JAVA</ID>
           <OriginalElement />
           <nodes>
-            <node x="177.0" y="79.0">composer.OvalComposer</node>
-            <node x="0.0" y="380.0">composer.ComposerFactory</node>
-            <node x="80.0" y="232.0">shape.Rectangle</node>
-            <node x="172.5" y="0.0">composer.ShapeComposer</node>
-            <node x="0.0" y="306.0">exception.UnknownShapeException</node>
-            <node x="65.5" y="153.0">shape.AbstractShape</node>
-            <node x="321.0" y="79.0">composer.LineComposer</node>
-            <node x="187.0" y="380.0">OOPDraw2</node>
-            <node x="193.0" y="232.0">shape.Line</node>
-            <node x="0.0" y="79.0">composer.RectangleComposer</node>
-            <node x="0.0" y="232.0">shape.Oval</node>
+            <node x="184.25000000000003" y="178.0">nl.hz.ict.loof0026.oopdraw.composer.OvalComposer</node>
+            <node x="328.25" y="178.0">nl.hz.ict.loof0026.oopdraw.composer.LineComposer</node>
+            <node x="299.3883928571429" y="89.0">nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer</node>
+            <node x="405.25993303571425" y="356.0">nl.hz.ict.loof0026.oopdraw.OOPDraw2</node>
+            <node x="470.25" y="178.0">nl.hz.ict.loof0026.oopdraw.exception.UnknownShapeException</node>
+            <node x="261.35033482142865" y="0.0">nl.hz.ict.loof0026.oopdraw.shape.AbstractShape</node>
+            <node x="452.3883928571429" y="89.0">nl.hz.ict.loof0026.oopdraw.shape.Line</node>
+            <node x="166.3125" y="89.0">nl.hz.ict.loof0026.oopdraw.shape.Oval</node>
+            <node x="0.0" y="89.0">nl.hz.ict.loof0026.oopdraw.shape.Rectangle</node>
+            <node x="169.25993303571425" y="277.0">nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory</node>
+            <node x="7.25" y="178.0">nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer</node>
           </nodes>
           <notes />
           <edges>
-            <edge source="composer.ComposerFactory" target="composer.RectangleComposer">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.LineComposer" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
+              <point x="-30.5" y="-14.5" />
+              <point x="358.75" y="158.0" />
+              <point x="382.5133928571429" y="158.0" />
+              <point x="16.625" y="14.5" />
+            </edge>
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.LineComposer" target="nl.hz.ict.loof0026.oopdraw.shape.Line">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="composer.ComposerFactory" target="exception.UnknownShapeException">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.composer.LineComposer">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="OOPDraw2" target="shape.AbstractShape">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
+              <point x="39.25" y="-14.5" />
+              <point x="125.0" y="148.0" />
+              <point x="316.0133928571429" y="148.0" />
+              <point x="-49.875" y="14.5" />
+            </edge>
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer" target="nl.hz.ict.loof0026.oopdraw.shape.Rectangle">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="composer.RectangleComposer" target="composer.ShapeComposer">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.OvalComposer" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
+              <point x="30.99999999999997" y="-14.5" />
+              <point x="277.25" y="158.0" />
+              <point x="349.2633928571429" y="158.0" />
+              <point x="-16.625" y="14.5" />
+            </edge>
+            <edge source="nl.hz.ict.loof0026.oopdraw.shape.Rectangle" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
               <point x="0.0" y="-14.5" />
-              <point x="78.5" y="54.0" />
-              <point x="194.66666666666666" y="54.0" />
-              <point x="-44.333333333333336" y="14.5" />
+              <point x="46.5" y="59.0" />
+              <point x="273.5503348214286" y="59.0" />
+              <point x="-48.80000000000001" y="14.5" />
             </edge>
-            <edge source="composer.ComposerFactory" target="composer.LineComposer">
+            <edge source="nl.hz.ict.loof0026.oopdraw.OOPDraw2" target="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="shape.Oval" target="shape.AbstractShape">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.composer.OvalComposer">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="nl.hz.ict.loof0026.oopdraw.shape.Line" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
               <point x="0.0" y="-14.5" />
-              <point x="30.0" y="207.0" />
-              <point x="85.83333333333334" y="207.0" />
-              <point x="-40.666666666666664" y="14.5" />
+              <point x="481.3883928571429" y="59.0" />
+              <point x="346.7503348214286" y="59.0" />
+              <point x="24.399999999999977" y="14.5" />
             </edge>
-            <edge source="composer.OvalComposer" target="composer.ShapeComposer">
+            <edge source="nl.hz.ict.loof0026.oopdraw.shape.Oval" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
               <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
+              <point x="196.3125" y="69.0" />
+              <point x="297.95033482142867" y="69.0" />
+              <point x="-24.399999999999977" y="14.5" />
             </edge>
-            <edge source="composer.LineComposer" target="shape.Line">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="shape.Rectangle" target="shape.AbstractShape">
-              <point x="0.0" y="-14.5" />
-              <point x="-7.105427357601002E-15" y="14.5" />
-            </edge>
-            <edge source="composer.RectangleComposer" target="shape.Rectangle">
+            <edge source="nl.hz.ict.loof0026.oopdraw.OOPDraw2" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="composer.ComposerFactory" target="composer.OvalComposer">
+            <edge source="nl.hz.ict.loof0026.oopdraw.OOPDraw2" target="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="shape.Line" target="shape.AbstractShape">
-              <point x="0.0" y="-14.5" />
-              <point x="222.0" y="207.0" />
-              <point x="167.16666666666666" y="207.0" />
-              <point x="40.66666666666666" y="14.5" />
-            </edge>
-            <edge source="OOPDraw2" target="composer.LineComposer">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.OvalComposer" target="nl.hz.ict.loof0026.oopdraw.shape.Oval">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="OOPDraw2" target="composer.ShapeComposer">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.composer.RectangleComposer">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="composer.OvalComposer" target="shape.Oval">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.ShapeComposer" target="nl.hz.ict.loof0026.oopdraw.shape.AbstractShape">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="OOPDraw2" target="composer.ComposerFactory">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="composer.LineComposer" target="composer.ShapeComposer">
-              <point x="0.0" y="-14.5" />
-              <point x="382.0" y="54.0" />
-              <point x="283.33333333333337" y="54.0" />
-              <point x="44.33333333333334" y="14.5" />
-            </edge>
-            <edge source="composer.ShapeComposer" target="shape.AbstractShape">
+            <edge source="nl.hz.ict.loof0026.oopdraw.composer.ComposerFactory" target="nl.hz.ict.loof0026.oopdraw.exception.UnknownShapeException">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="-1059.0" />
-          <SelectedNodes>
-            <node>composer.ComposerFactory</node>
-          </SelectedNodes>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-2.0" y="165.0" />
+          <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/OOPDraw2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6448598">
+          <caret line="98" column="32" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
