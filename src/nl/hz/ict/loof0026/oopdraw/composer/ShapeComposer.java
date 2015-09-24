@@ -1,8 +1,8 @@
-package composer;
+package nl.hz.ict.loof0026.oopdraw.composer;
 
 import java.awt.Point;
 
-import shape.AbstractShape;
+import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
 
 /**
  * This interface describes a shape composer

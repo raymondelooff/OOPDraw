@@ -1,4 +1,4 @@
-/* 
+package nl.hz.ict.loof0026.oopdraw;/*
  * Filename: OOPDraw2.java 
  * Written By: Sunit Katkar 
  * E-Mail:sunitkatkar@hotmail.com 
@@ -23,11 +23,9 @@
  * if your system crashes because of this code, or if anything else 
  * bad happens. In short "DO WHAT YOU WANT BUT DONT BLAME ME !" 
  *****************************************************************/
-import composer.LineComposer;
-import composer.OvalComposer;
-import composer.RectangleComposer;
-import composer.ShapeComposer;
-import shape.AbstractShape;
+import nl.hz.ict.loof0026.oopdraw.composer.*;
+import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
+import nl.hz.ict.loof0026.oopdraw.exception.*;
 
 import java.awt.Button;
 import java.awt.Color;
@@ -82,6 +80,7 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 	private static final long serialVersionUID = 4695753453561082104L;
 	private static OOPDraw2 _instance;
+	private ComposerFactory composerFactory;
 	private ShapeComposer currentComposer;
 	private HashSet<AbstractShape> shapes;
 
@@ -91,6 +90,7 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	private OOPDraw2() {
 		// Initialize fields
 		shapes = new HashSet<AbstractShape>();
+		composerFactory = new ComposerFactory();
 		currentComposer = new LineComposer();
 
 		// Do nothing in constructor off applet
@@ -214,7 +214,12 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentComposer = new LineComposer();
+				try {
+					currentComposer = composerFactory.getComposer("line");
+				}
+				catch (UnknownShapeException e) {
+					e.printStackTrace();
+				}
 			}
 
 		});
@@ -225,7 +230,12 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentComposer = new OvalComposer();
+				try {
+					currentComposer = composerFactory.getComposer("oval");
+				}
+				catch (UnknownShapeException e) {
+					e.printStackTrace();
+				}
 			}
 
 		});
@@ -236,7 +246,12 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentComposer = new RectangleComposer();
+				try {
+					currentComposer = composerFactory.getComposer("rectangle");
+				}
+				catch (UnknownShapeException e) {
+					e.printStackTrace();
+				}
 			}
 
 		});

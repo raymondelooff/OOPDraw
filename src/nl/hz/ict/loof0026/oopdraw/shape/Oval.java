@@ -1,4 +1,4 @@
-package shape;
+package nl.hz.ict.loof0026.oopdraw.shape;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;

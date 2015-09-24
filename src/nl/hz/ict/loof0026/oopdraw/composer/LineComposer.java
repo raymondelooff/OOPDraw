@@ -1,7 +1,7 @@
-package composer;
+package nl.hz.ict.loof0026.oopdraw.composer;
 
-import shape.AbstractShape;
-import shape.Line;
+import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
+import nl.hz.ict.loof0026.oopdraw.shape.Line;
 
 import java.awt.*;
 
