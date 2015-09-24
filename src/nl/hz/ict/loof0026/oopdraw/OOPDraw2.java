@@ -1,4 +1,5 @@
-package nl.hz.ict.loof0026.oopdraw;/*
+package nl.hz.ict.loof0026.oopdraw;
+/*
  * Filename: OOPDraw2.java 
  * Written By: Sunit Katkar 
  * E-Mail:sunitkatkar@hotmail.com 
