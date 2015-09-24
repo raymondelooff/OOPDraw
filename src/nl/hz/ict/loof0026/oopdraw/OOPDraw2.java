@@ -23,6 +23,7 @@ package nl.hz.ict.loof0026.oopdraw;/*
  * if your system crashes because of this code, or if anything else 
  * bad happens. In short "DO WHAT YOU WANT BUT DONT BLAME ME !" 
  *****************************************************************/
+import com.sun.deploy.util.StringUtils;
 import nl.hz.ict.loof0026.oopdraw.composer.*;
 import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
 import nl.hz.ict.loof0026.oopdraw.exception.*;
@@ -143,7 +144,7 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		repaint();
 	}
 
-	/*
+	/**
 	 * Mouse Drag i.e. Left mouse button is down and mouse is being moved
 	 * 
 	 * @see
@@ -186,7 +187,7 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		// Method not used
 	}
 
-	/*
+	/**
 	 * Paint method overridden for custom rendering of the screen
 	 * 
 	 * @see java.awt.Container#paint(java.awt.Graphics)
@@ -204,8 +205,17 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		}
 	}
 
-	/*
-	 * Initialize all GUI components
+	/**
+	 * Capitalizes the letter of the given word
+	 * @param string The word that need to be capitalized
+	 * @return The capitalized word
+	 */
+	private String capitalize(String string) {
+		return string.substring(0, 1).toUpperCase() + string.substring(1);
+	}
+
+	/**
+	 * Initializes all GUI components
 	 */
 	private void initGUI() {
 		setSize(800, 600);
@@ -214,53 +224,25 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
 
-		// shape.Line
-		Button btnLine = new Button("Line");
-		btnLine.addActionListener(new ActionListener() {
+		// Initialize shape composers
+		for(String shapeName: composerFactory.listComposerNames()) {
+			Button button = new Button(capitalize(shapeName));
+			button.addActionListener(new ActionListener() {
 
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				try {
-					currentComposer = composerFactory.getComposer("line");
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					try {
+						currentComposer = composerFactory.getComposer(shapeName);
+					}
+					catch (UnknownShapeException exception) {
+						exception.printStackTrace();
+					}
 				}
-				catch (UnknownShapeException e) {
-					e.printStackTrace();
-				}
-			}
 
-		});
+			});
 
-		// shape.Oval
-		Button btnOval = new Button("Oval");
-		btnOval.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				try {
-					currentComposer = composerFactory.getComposer("oval");
-				}
-				catch (UnknownShapeException e) {
-					e.printStackTrace();
-				}
-			}
-
-		});
-
-		// Rectangle
-		Button btnRect = new Button("Rectangle");
-		btnRect.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				try {
-					currentComposer = composerFactory.getComposer("rectangle");
-				}
-				catch (UnknownShapeException e) {
-					e.printStackTrace();
-				}
-			}
-
-		});
+			add(button);
+		}
 
 		// Clear view
 		Button btnClear = new Button("Clear");
@@ -278,9 +260,6 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 		});
 
-		add(btnLine);
-		add(btnOval);
-		add(btnRect);
 		add(btnClear);
 	}
 

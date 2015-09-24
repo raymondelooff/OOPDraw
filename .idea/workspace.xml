@@ -26,10 +26,12 @@
       <file leaf-file-name="OOPDraw2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/OOPDraw2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6448598">
-              <caret line="98" column="32" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.519573">
+              <caret line="235" column="21" selection-start-line="235" selection-start-column="21" selection-end-line="235" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#6712#6713#0" expanded="true" />
+                <element signature="e#6784#6785#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,8 +152,12 @@
         <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/ComposerFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-              <folding />
+              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1032#1033#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -253,6 +259,7 @@
         <option value="$PROJECT_DIR$/src/exception/UnknownShapeException.java" />
         <option value="$PROJECT_DIR$/src/composer/ComposerFactory.java" />
         <option value="$PROJECT_DIR$/src/OOPDraw2.java" />
+        <option value="$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/ComposerFactory.java" />
         <option value="$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/OOPDraw2.java" />
       </list>
     </option>
@@ -729,12 +736,12 @@
       <workItem from="1442478103340" duration="9926000" />
       <workItem from="1442569119603" duration="911000" />
       <workItem from="1443083498192" duration="2255000" />
-      <workItem from="1443085938696" duration="1387000" />
+      <workItem from="1443085938696" duration="3560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37788000" />
+    <option name="totallyTimeSpent" value="39961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="6" />
@@ -809,6 +816,8 @@
           <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6784#6785#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -859,6 +868,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6784#6785#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -947,6 +958,8 @@
           <caret line="167" column="33" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6784#6785#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1012,6 +1025,8 @@
           <caret line="167" column="33" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6784#6785#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1090,6 +1105,8 @@
           <caret line="134" column="44" selection-start-line="134" selection-start-column="44" selection-end-line="134" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6784#6785#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1138,6 +1155,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6784#6785#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1253,14 +1272,6 @@
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/ComposerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,12 +1412,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/OOPDraw2.java">
+    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/composer/ComposerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6448598">
-          <caret line="98" column="32" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nl/hz/ict/loof0026/oopdraw/OOPDraw2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.519573">
+          <caret line="235" column="21" selection-start-line="235" selection-start-column="21" selection-end-line="235" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6784#6785#0" expanded="true" />
           </folding>
         </state>
       </provider>
