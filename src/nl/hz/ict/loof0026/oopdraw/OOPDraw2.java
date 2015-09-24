@@ -24,6 +24,7 @@ package nl.hz.ict.loof0026.oopdraw;
  * if your system crashes because of this code, or if anything else 
  * bad happens. In short "DO WHAT YOU WANT BUT DONT BLAME ME !" 
  *****************************************************************/
+import com.sun.deploy.util.StringUtils;
 import nl.hz.ict.loof0026.oopdraw.composer.*;
 import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
 import nl.hz.ict.loof0026.oopdraw.exception.*;
@@ -184,12 +185,19 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	}
 
 	/**
-	 * Capitalizes the letter of the given word
-	 * @param string The word that need to be capitalized
-	 * @return The capitalized word
+	 * Capitalizes the letter of the given words
+	 * @param string The words that need to be capitalized
+	 * @return The capitalized words
 	 */
 	private String capitalize(String string) {
-		return string.substring(0, 1).toUpperCase() + string.substring(1);
+		String[] words = string.split(" ");
+		String result = "";
+
+		for(String word: words) {
+			result += word.substring(0, 1).toUpperCase() + word.substring(1) + " ";
+		}
+
+		return StringUtils.trimWhitespace(result);
 	}
 
 	/**
