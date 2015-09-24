@@ -11,9 +11,10 @@ import java.util.Set;
  */
 public class ComposerFactory {
 
+    private static ComposerFactory _instance;
     private HashMap<String, ShapeComposer> composers;
 
-    public ComposerFactory() {
+    private ComposerFactory() {
         // Intialize HashMap
         composers = new HashMap<String, ShapeComposer>();
 
@@ -26,6 +27,18 @@ public class ComposerFactory {
         composers.put("line", lineComposer);
         composers.put("oval", ovalComposer);
         composers.put("rectangle", rectangleComposer);
+    }
+
+    /**
+     * Return the singleton instance of the ComposerFactory
+     * @return The singleton instance of the ComposerFactory
+     */
+    public static ComposerFactory getInstance() {
+        if(_instance == null) {
+            _instance = new ComposerFactory();
+        }
+
+        return _instance;
     }
 
     /**

@@ -23,7 +23,6 @@ package nl.hz.ict.loof0026.oopdraw;/*
  * if your system crashes because of this code, or if anything else 
  * bad happens. In short "DO WHAT YOU WANT BUT DONT BLAME ME !" 
  *****************************************************************/
-import com.sun.deploy.util.StringUtils;
 import nl.hz.ict.loof0026.oopdraw.composer.*;
 import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
 import nl.hz.ict.loof0026.oopdraw.exception.*;
@@ -81,7 +80,6 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 
 	private static final long serialVersionUID = 4695753453561082104L;
 	private static OOPDraw2 _instance;
-	private ComposerFactory composerFactory;
 	private ShapeComposer currentComposer;
 	private HashSet<AbstractShape> shapes;
 
@@ -91,16 +89,8 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	private OOPDraw2() {
 		// Initialize fields
 		shapes = new HashSet<AbstractShape>();
-		composerFactory = new ComposerFactory();
 
-		try {
-			currentComposer = composerFactory.getComposer("line");
-		}
-		catch (UnknownShapeException e) {
-			e.printStackTrace();
-		}
-
-		// Do nothing in constructor off applet
+		// Initialize the GUI
 		initGUI();
 	}
 	
@@ -218,6 +208,10 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 	 * Initializes all GUI components
 	 */
 	private void initGUI() {
+		// Get the composer factory
+		ComposerFactory composerFactory = ComposerFactory.getInstance();
+
+		// Set the frame
 		setSize(800, 600);
 		setTitle("Draw");
 		setLayout(new FlowLayout());
@@ -240,8 +234,15 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 				}
 
 			});
-
 			add(button);
+
+			// Set the default composer
+			try {
+				currentComposer = composerFactory.getComposer("line");
+			}
+			catch (UnknownShapeException e) {
+				e.printStackTrace();
+			}
 		}
 
 		// Clear view
