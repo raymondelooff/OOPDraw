@@ -22,11 +22,13 @@ public class ComposerFactory {
         LineComposer lineComposer = new LineComposer();
         OvalComposer ovalComposer = new OvalComposer();
         RectangleComposer rectangleComposer = new RectangleComposer();
+        RoundedRectangleComposer roundedRectangleComposer = new RoundedRectangleComposer();
 
         // Add composers to composers HashMap
         composers.put("line", lineComposer);
         composers.put("oval", ovalComposer);
         composers.put("rectangle", rectangleComposer);
+        composers.put("rounded rectangle", roundedRectangleComposer);
     }
 
     /**
