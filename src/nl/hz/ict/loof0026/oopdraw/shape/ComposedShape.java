@@ -9,8 +9,6 @@ import java.util.ArrayList;
  */
 public class ComposedShape extends AbstractShape {
 
-    private ArrayList<AbstractShape> shapes;
-
     public ComposedShape() {
         shapes = new ArrayList<AbstractShape>();
     }
@@ -39,20 +37,22 @@ public class ComposedShape extends AbstractShape {
         }
     }
 
-    /**
-     * This method adds a shape to the shapes list
-     * @param shape The shape to add
-     */
+    @Override
     public void add(AbstractShape shape) {
-        shapes.add(shape);
+        super.add(shape);
     }
 
-    /**
-     * This method removes the given shape from the shape list
-     * @param shape The shape to remove
-     */
+    @Override
     public void remove(AbstractShape shape) {
-        shapes.remove(shape);
+        super.remove(shape);
     }
 
+    @Override
+    public void Draw(Graphics2D graphics) {
+        super.Draw(graphics);
+
+        for(AbstractShape shape: shapes) {
+            shape.Draw(graphics);
+        }
+    }
 }

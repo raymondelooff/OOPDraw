@@ -1,6 +1,7 @@
 package nl.hz.ict.loof0026.oopdraw.shape;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * base class shape.AbstractShape
@@ -10,6 +11,7 @@ public abstract class AbstractShape {
 
 	protected Point startPoint, endPoint;
 	protected Color color;
+	protected ArrayList<AbstractShape> shapes;
 
 	/**
 	 * This method sets the start point of the shape
@@ -31,6 +33,22 @@ public abstract class AbstractShape {
 	 * This method updates the shape start and end point
 	 */
 	public abstract void updateShape();
+
+	/**
+	 * This method adds a shape to the shapes list
+	 * @param shape The shape to add
+	 */
+	public void add(AbstractShape shape) {
+		shapes.add(shape);
+	}
+
+	/**
+	 * This method removes the given shape from the shape list
+	 * @param shape The shape to remove
+	 */
+	public void remove(AbstractShape shape) {
+		shapes.remove(shape);
+	}
 
 	/**
 	 * This method needs to be overrided to draw the correct shape
