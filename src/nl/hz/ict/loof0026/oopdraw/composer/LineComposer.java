@@ -9,7 +9,9 @@ import java.awt.*;
  * This class describes a line composer
  * @author Raymon de Looff
  */
-public class LineComposer extends ShapeComposer {
+public class LineComposer implements ShapeComposer {
+
+	private Line shape;
 
 	@Override
 	public AbstractShape create(Point point) {
@@ -17,6 +19,16 @@ public class LineComposer extends ShapeComposer {
 		shape.setStartPoint(point);
 
 		return shape;
+	}
+
+	@Override
+	public void expand(Point point) {
+		shape.setEndPoint(point);
+	}
+
+	@Override
+	public void complete(Point point) {
+		expand(point);
 	}
 
 }

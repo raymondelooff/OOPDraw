@@ -23,12 +23,14 @@ public class ComposerFactory {
         OvalComposer ovalComposer = new OvalComposer();
         RectangleComposer rectangleComposer = new RectangleComposer();
         RoundedRectangleComposer roundedRectangleComposer = new RoundedRectangleComposer();
+        FunnyComposer funnyComposer = new FunnyComposer();
 
         // Add composers to composers HashMap
         composers.put("line", lineComposer);
         composers.put("oval", ovalComposer);
         composers.put("rectangle", rectangleComposer);
         composers.put("rounded rectangle", roundedRectangleComposer);
+        composers.put("funny", funnyComposer);
     }
 
     /**

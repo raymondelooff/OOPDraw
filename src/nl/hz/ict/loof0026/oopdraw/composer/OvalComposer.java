@@ -9,7 +9,9 @@ import java.awt.*;
  * This class describes an oval composer
  * @author Raymon de Looff
  */
-public class OvalComposer extends ShapeComposer {
+public class OvalComposer implements ShapeComposer {
+
+    private Oval shape;
 
     @Override
     public AbstractShape create(Point point) {
@@ -17,6 +19,16 @@ public class OvalComposer extends ShapeComposer {
         shape.setStartPoint(point);
 
         return shape;
+    }
+
+    @Override
+    public void expand(Point point) {
+        shape.setEndPoint(point);
+    }
+
+    @Override
+    public void complete(Point point) {
+        expand(point);
     }
 
 }

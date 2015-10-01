@@ -1,22 +1,28 @@
 package nl.hz.ict.loof0026.oopdraw.composer;
 
-import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
+import nl.hz.ict.loof0026.oopdraw.shape.*;
 import nl.hz.ict.loof0026.oopdraw.shape.Rectangle;
-import org.w3c.dom.css.Rect;
 
 import java.awt.*;
 
 /**
- * This class describes a rectangle composer
+ * This class describes a composer that composes a line, rectangle and oval shape
  * @author Raymon de Looff
  */
-public class RectangleComposer implements ShapeComposer {
+public class FunnyComposer implements ShapeComposer {
 
-    private Rectangle shape;
+    private ComposedShape shape;
 
     @Override
     public AbstractShape create(Point point) {
-        shape = new Rectangle();
+        // Create composed shape
+        shape = new ComposedShape();
+
+        // Create shapes and add it to the composed shape
+        shape.add(new Line());
+        shape.add(new Oval());
+        shape.add(new Rectangle());
+
         shape.setStartPoint(point);
 
         return shape;
