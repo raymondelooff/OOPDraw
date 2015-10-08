@@ -1,29 +1,5 @@
 package nl.hz.ict.loof0026.oopdraw;
-/*
- * Filename: OOPDraw2.java 
- * Written By: Sunit Katkar 
- * E-Mail:sunitkatkar@hotmail.com 
- * Home-Page : http://www.vidyut.com/sunit 
- * Java Page : www.vidyut.com/sunit/JavaPage.html 
- ****************************************************************** 
- * Description: 
- * A very simple vector drawing example. I have used the OO concept 
- * of Polymorphism to declare on abstract Shape class and then derived  
- * line, rectangle and oval shape classes. The shapes are stored in a 
- * Vector so that they remain on screen as new shapes are drawn. 
- * An offscreen image technique is used to avoid flicker. 
- **************************************************************** 
- * Copyright (c) 1997 Sunit Katkar All Rights Reserved. 
- * 
- * Permission to use, copy, modify, and distribute this software 
- * for NON-COMMERCIAL or COMMERCIAL purposes and without fee 
- * is hereby granted. 
- * 
- * Whew ! That was too much legalese..even to have copied and pasted 
- * from some other place... PLEASE DO NOT BLAME ME in any way 
- * if your system crashes because of this code, or if anything else 
- * bad happens. In short "DO WHAT YOU WANT BUT DONT BLAME ME !" 
- *****************************************************************/
+
 import com.sun.deploy.util.StringUtils;
 import nl.hz.ict.loof0026.oopdraw.composer.*;
 import nl.hz.ict.loof0026.oopdraw.shape.AbstractShape;
@@ -45,39 +21,12 @@ import java.util.HashSet;
 import javax.swing.JFrame;
 
 /**
- * Filename: OOPDraw2.java<br/>
- * Written By: Sunit Katkar<br/>
- * E-Mail:sunitkatkar@hotmail.com<br/>
- * Home-Page : [url]http://www.vidyut.com/sunit[/url]<br/>
- * Java Page : [url]www.vidyut.com/sunit/JavaPage.html[/url]
- * <p/>
- *******************************************************************************<p/>
- * Description: A very simple vector drawing example. I have used the OO concept
+ * A very simple vector drawing example. I have used the OO concept
  * of Polymorphism to declare on abstract AbstractShape class and then derived line,
  * rectangle and oval shape classes. The shapes are stored in a Vector so that
  * they remain on screen as new shapes are drawn. An offscreen image technique
  * is used to avoid flicker.
- * <p/>
- *******************************************************************************<p/>
- * Copyright (c) 1997 Sunit Katkar All Rights Reserved.
- * <p/>
- * 
- * Permission to use, copy, modify, and distribute this software for
- * NON-COMMERCIAL or COMMERCIAL purposes and without fee is hereby granted.
- * <p/>
- * 
- * Whew ! That was too much legalese..even to have copied and pasted from some
- * other place... PLEASE DO NOT BLAME ME in any way if your system crashes
- * because of this code, or if anything else bad happens. In short
- * "DO WHAT YOU WANT BUT DONT BLAME ME !"
- * <p/>
- *******************************************************************************<p/>
- * This code was modified by BugSlayer to change it from an applet into a
- * desktop application. Also, refactored the code a little bit to comply to
- * naming conventioned, infomration hiding and several other basic OO
- * principles.
- * <p/>
- ******************************************************************************/
+ */
 public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListener {
 
 	private static final long serialVersionUID = 4695753453561082104L;
