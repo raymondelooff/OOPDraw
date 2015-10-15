@@ -1,4 +1,4 @@
-package nl.hz.it.loof0026.oopdrawmvc.model;
+package nl.hz.ict.loof0026.oopdrawmvc.model;
 
 import java.util.Observable;
 import java.util.Observer;

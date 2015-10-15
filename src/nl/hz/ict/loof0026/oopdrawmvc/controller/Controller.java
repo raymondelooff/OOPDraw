@@ -1,7 +1,7 @@
-package nl.hz.it.loof0026.oopdrawmvc.controller;
+package nl.hz.ict.loof0026.oopdrawmvc.controller;
 
-import nl.hz.it.loof0026.oopdrawmvc.view.View;
-import nl.hz.it.loof0026.oopdrawmvc.model.Model;
+import nl.hz.ict.loof0026.oopdrawmvc.model.Model;
+import nl.hz.ict.loof0026.oopdrawmvc.view.View;
 
 import java.util.Observable;
 import java.util.Observer;

@@ -1,6 +1,4 @@
-package nl.hz.it.loof0026.oopdrawmvc.controller;
-
-import nl.hz.it.loof0026.oopdrawmvc.controller.Controller;
+package nl.hz.ict.loof0026.oopdrawmvc.controller;
 
 import java.util.Observable;
 

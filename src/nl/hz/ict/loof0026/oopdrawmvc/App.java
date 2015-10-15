@@ -1,8 +1,8 @@
-package nl.hz.it.loof0026.oopdrawmvc;
+package nl.hz.ict.loof0026.oopdrawmvc;
 
-import nl.hz.it.loof0026.oopdrawmvc.model.Model;
-import nl.hz.it.loof0026.oopdrawmvc.view.MainView;
-import nl.hz.it.loof0026.oopdrawmvc.view.View;
+import nl.hz.ict.loof0026.oopdrawmvc.model.Model;
+import nl.hz.ict.loof0026.oopdrawmvc.view.MainView;
+import nl.hz.ict.loof0026.oopdrawmvc.view.View;
 
 /**
  * Created by raymondelooff on 14-10-15.
